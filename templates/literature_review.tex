@@ -1,0 +1,61 @@
+\documentclass[12pt,a4paper]{article}
+
+% Language and encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Mathematics
+\usepackage{amsmath,amsfonts,amssymb,bm}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% Page layout
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\doublespacing
+
+% Bibliography
+\usepackage[
+    backend=biber,
+    style=apa,
+    sorting=nty
+]{biblatex}
+\bibliography{references}
+
+% Custom commands
+\newcommand{\cites}[1]{\citeauthor{#1} (\citeyear{#1})}
+\newcommand{\citepp}[2]{\citeauthor{#1}, #2}
+
+% Title
+\title{\textbf{Literature Review: #TITLE#}}
+\author{Hermes Research Agent System}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\vspace{1cm}
+\textbf{Topic:} #TOPIC# \\
+\textbf{Generated:} #DATE# \\
+\textbf{Task ID:} #TASKID#
+
+\newpage
+\pagenumbering{arabic}
+
+#CONTENT#
+
+% References section
+\printbibliography[heading=bibintoc, title={References}]
+
+\end{document}

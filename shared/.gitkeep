@@ -1,0 +1,2 @@
+# This directory contains shared JSON files used for inter-agent communication.
+# Files are named: task_{task_id}_{type}.json
